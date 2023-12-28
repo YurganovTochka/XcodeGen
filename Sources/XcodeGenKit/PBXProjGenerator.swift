@@ -309,7 +309,7 @@ public class PBXProjGenerator {
         }
         pbxProject.knownRegions = knownRegions.sorted()
 
-        pbxProject.packages = packageReferences.sorted { $0.key < $1.key }.map { $1 }
+        pbxProject.remotePackages = packageReferences.sorted { $0.key < $1.key }.map { $1 }
 
         let allTargets: [PBXTarget] = targetObjects.valueArray + targetAggregateObjects.valueArray
         pbxProject.targets = allTargets
